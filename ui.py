@@ -4,13 +4,13 @@ import llm
 import base64
 
 tl.set_page_config(
-    page_title="LaTeX OCR with Llama 3.2 Vision",
+    page_title="LaTeX OCR with Llama",
     page_icon="🦙",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-tl.title("🦙 LaTeX OCR with Llama 3.2 Vision")
+tl.title("🦙 LaTeX OCR with Llama 🦙")
 
 col1, col2 = tl.columns([6,1])
 with col2:
