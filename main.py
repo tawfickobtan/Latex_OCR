@@ -1,5 +1,4 @@
 from groq import Groq
-from PIL import Image
 import os
 import base64
 
