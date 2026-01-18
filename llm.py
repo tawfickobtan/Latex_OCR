@@ -1,6 +1,5 @@
 from groq import Groq
 import os
-import base64
 
 client = Groq(
     api_key=os.environ.get("GROQ_API_KEY")
