@@ -1,6 +1,6 @@
-# Image to LaTeX (Groq + LLaMA)
+# Image to LaTeX (Groq + LLaMA + Streamlit)
 
-This project converts **mathematical equations from images into LaTeX code** using **Groq's API** and a **vision-capable LLaMA model**.
+This project converts **mathematical equations from images into LaTeX code** using **Groq's API**, a **vision-capable LLaMA model**, and provides a **Streamlit web interface** for easy interaction.
 
 The model is strictly instructed to output **only raw LaTeX**, making it suitable for automated pipelines, datasets, and evaluation tasks.
 
@@ -13,6 +13,7 @@ The model is strictly instructed to output **only raw LaTeX**, making it suitabl
 - 🧾 Outputs **pure LaTeX only** (no explanations, no formatting wrappers)
 - 🤖 Uses `meta-llama/llama-4-scout-17b-16e-instruct`
 - ⚡ Powered by **Groq API**
+- 🌐 Streamlit interface for **interactive OCR**
 
 ---
 
@@ -20,11 +21,13 @@ The model is strictly instructed to output **only raw LaTeX**, making it suitabl
 
 - Python 3.9+
 - Groq Python SDK
+- Pillow
+- Streamlit
 
 Install dependencies:
 
 ```bash
-pip install groq
+pip install groq pillow streamlit
 ```
 
 ---
@@ -47,14 +50,14 @@ setx GROQ_API_KEY "your_api_key_here"
 
 ## 📄 Usage
 
-1. Place your equation image in the project directory (e.g. `1406-7.png`)
-2. Run the script
-
 ```bash
-python main.py
+streamlit run app.py
 ```
 
-The output will be **only the LaTeX code** corresponding to the equation in the image.
+- Upload an image
+- Click **Extract LaTeX**
+- View raw LaTeX and rendered equation
+- Use **Clear** button to reset
 
 ---
 
@@ -75,7 +78,7 @@ This ensures clean and deterministic output.
 ## 🧠 Example Workflow
 
 ```
-Image → Base64 → Groq Vision Model → Raw LaTeX
+Image → Base64 → Groq Vision Model / LLaMA → Raw LaTeX → Streamlit Display
 ```
 
 ---
@@ -84,8 +87,8 @@ Image → Base64 → Groq Vision Model → Raw LaTeX
 
 ```
 .
-├── main.py
-├── 1406-7.png
+├── main.py          # Python script using Groq
+├── ui.py           # Streamlit app for interactive OCR
 ├── README.md
 ```
 
@@ -98,17 +101,4 @@ Image → Base64 → Groq Vision Model → Raw LaTeX
 
 ---
 
-## 📜 License
-
-MIT License
-
----
-
-## ⭐ Acknowledgments
-
-- Groq API
-- Meta LLaMA Models
-
----
-
-If you find this useful, feel free to ⭐ the repository.
+If you find this useful, feel free to ⭐ the repository, or checkout my [LinkedIn Profile](https://www.linkedin.com/in/tawfic-kobtan/).
